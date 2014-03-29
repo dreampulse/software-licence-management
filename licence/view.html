@@ -1,0 +1,58 @@
+<div class="row marketing">
+  <div class="col-lg-6">
+    <h1 ng-show='false'>sdfds</h1>
+    
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Full Name</th>
+          <th>Versions</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="(idx, licence) in licences">
+          <td ng-show="licence.mode == undefined">{{licence.name}}</td>
+          <td ng-show="licence.mode == undefined">{{licence.fullName}}</td>
+          <td ng-show="licence.mode == undefined">
+            <div ng-repeat="version in licence.versions">
+              <a href="{{version.url}}">{{version.name}}</a>
+            </div>
+          </td>
+          <td ng-show="licence.mode == undefined">
+            <button type="button" class="btn btn-primary btn-sm" ng-click="edit(idx)">edit</button>
+          </td>
+  
+          <td ng-show="licence.mode == 'edit'"><input type="text" class="form-control" placeholder="e.g. GPL" ng-model="licence.name"></td>
+          <td ng-show="licence.mode == 'edit'"><input type="text" class="form-control" placeholder="e.g. GNU Public Licence" ng-model="licence.fullName"></td>
+          <td ng-show="licence.mode == 'edit'">
+            <div class="highlight" ng-repeat="(version_idx, version) in licence.versions">
+              <button type="button" class="close" aria-hidden="true" ng-click="removeVersion(idx, version_idx)">&times;</button>
+              <div><label>
+                Version Number:
+                <input type="text" class="form-control" placeholder="3.0" ng-model="version.name">
+              </label></div>
+              <div><label>
+                Link:
+                <input type="text" class="form-control" placeholder="http://www..." ng-model="version.url">
+              </label></div>
+            </div>
+            <button type="button" class="btn btn-info btn-sm" ng-click="licence.createVersions()">add</button>
+          </td>
+          <td ng-show="licence.mode == 'edit'">
+            <div><button type="button" class="btn btn-success btn-sm" ng-click="save(idx)">save</button></div>
+            <div><button type="button" class="btn btn-warning btn-sm" ng-click="cancel(idx)">cancel</button></div>       
+            <div><button type="button" class="btn btn-danger btn-sm" ng-click="delete(idx)">delete</button></
+          </td>
+            
+        </tr>
+      </tbody>
+    </table>
+    
+    <button type="button" class="btn btn-info btn-lg" ng-click="create()">create licence</button>
+    
+    
+  </div>
+</div>

@@ -3,19 +3,29 @@
 <head>
 
   <!-- AngularJS Zeugs -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular-route.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+  
+  <script language="JavaScript" src="node_modules/modelizer/browser-dist/modelizer.js"></script>
+  
 
   <!-- CSS Zeugs -->
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 
   <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="style.css">
+  
+  
   <title>Software Licence Management</title>
 
   <script language="JavaScript" src="app.js"></script>
+  <script language="JavaScript" src="models.js"></script>
+  <script language="JavaScript" src="licence/controller.js"></script>
+  
 
+  
 </head>
 <body ng-app="App">
 
@@ -24,7 +34,7 @@
     <div class="header">
       <ul class="nav nav-pills pull-right">
         <li class="active"><a href="#">Home</a></li>
-        <li><a ng-href="#/inhalt1">Inhalt1</a></li>
+        <li><a ng-href="#/licence">licence</a></li>
         <li><a ng-href="#">Bla</a></li>
       </ul>
       <h3 class="text-muted">Software Licence Management</h3>

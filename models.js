@@ -2,9 +2,9 @@
 
 var models = function () {
 
-var model = require('modelizer');
+  var model = require('modelizer');
 
-
+  // imports
   var Attr = model.Attr;
   var Type = model.Attr.Types;
   var Ref = model.Ref;
@@ -13,13 +13,14 @@ var model = require('modelizer');
   var Operation = model.Operation;
 
   
+  // model definitions:
+  
   var Licence = new model("Licences", {
     name : Attr(Type.string),
     fullName : Attr(Type.string),
     versions : [{
-      version : Attr(Type.string),
-      url : Attr(Type.string),
-      text : Attr(Type.string)
+      name : Attr(Type.string),
+      url : Attr(Type.string)
     }]
   });
   

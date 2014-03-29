@@ -1,0 +1,34 @@
+{
+  "name": "software-licence-management",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A software licence management App using Angular, Modelizer, node.js and mongoDB stack",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "modelizer": "^0.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:dreampulse/software-licence-management.git"
+  },
+  "keywords": [
+    "licence",
+    "management",
+    "mongodb",
+    "angularjs",
+    "modelizer"
+  ],
+  "author": "Jonathan Häberle",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/dreampulse/software-licence-management/issues"
+  },
+  "homepage": "https://github.com/dreampulse/software-licence-management"
+}
