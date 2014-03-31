@@ -17,6 +17,15 @@ angular.module('App', ['ngRoute', 'modelizer'])
           }]
         }
       })
+      .when('/baseProduct', {
+        templateUrl: 'baseProduct/view.html',
+        controller: 'BaseProductCtrl',
+        resolve: {
+          baseProducts: ['models', function (models) {
+            return models.BaseProduct.all();
+          }]
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
