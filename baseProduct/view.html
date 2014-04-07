@@ -1,5 +1,5 @@
 <div class="row marketing">
-  <div class="col-lg-6">
+  <div class="">
     <h1>Base Products</h1>
     
     
@@ -18,11 +18,11 @@
           <td ng-show="baseProducts.mode == undefined">{{baseProducts.fullName}}</td>
           <td ng-show="baseProducts.mode == undefined">
             <div ng-repeat="version in baseProducts.versions">
-              V {{version.number}} ({{version.licence.name}}<a href="{{version.licence.url}}">{{version.licence.version_name}}</a>)
+               V {{version.number}} ({{version.licence.ref().name}}<a href="{{version.licence.ref().url}}">{{version.licence.ref().version_name}}</a>)
             </div>
           </td>
           <td ng-show="licence.mode == undefined">
-            <!--<button type="button" class="btn btn-primary btn-sm" ng-click="edit(idx)">edit</button>-->
+            <button type="button" class="btn btn-primary btn-sm" ng-click="edit(idx)">edit</button>
           </td>
   <!---->
           <!--<td ng-show="licence.mode == 'edit'"><input type="text" class="form-control" placeholder="e.g. GPL" ng-model="licence.name"></td>-->
@@ -51,7 +51,7 @@
       </tbody>
     </table>
     
-    <button type="button" class="btn btn-info btn-lg" ng-click="create()">create licence</button>
+    <button type="button" class="btn btn-info btn-lg" ng-click="create()">add Base Product</button>
     
     
   </div>

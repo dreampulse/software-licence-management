@@ -22,7 +22,25 @@ angular.module('App', ['ngRoute', 'modelizer'])
         controller: 'BaseProductCtrl',
         resolve: {
           baseProducts: ['models', function (models) {
-            return models.BaseProduct.all();
+            var Q = require("q");
+            var baseProduct;
+            return models.BaseProduct.all()
+              .then(function(product) {
+                baseProduct = product;
+                var promises = [];
+                for (var j=0; j<product.length; j++) {
+                  for (var i=0; i<product[j].versions.length; i++) {
+                    promises.push(product[j].versions[i].licence.load());
+                  }
+                }
+                return Q.all(promises);
+              })
+              .then(function(all) {
+                return baseProduct;
+              })
+              .fail(function(err) {
+                console.log("err", err);
+              });
           }]
         }
       })
